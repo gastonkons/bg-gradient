@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Background Generator</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body id="gradient">
-	<h1>Background Generator</h1>
-	<input type="color" name="color1" class="color1" value="#F20000">
-	<input type="color" name="color2" class="color2" value="#FFFF00">
-	<h2>Current CSS Background</h2>
-	<h3></h3>
-	<br>
-	<button id="random">Random Colors</button>
-	<p id="p-random"></p>
-	<script type="text/javascript" src="script.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <title>Background Generator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="gradient">
+    <div class="gradient">
+      <div class="gradient-container">
+        <h1>Background Generator</h1>
+        <h2>Choose the Colors!</h2>
+        <input type="color" name="color1" class="color1" value="#0066cc" />
+        <input type="color" name="color2" class="color2" value="#008fcf" />
+        <h2>Copy the code</h2>
+        <h3></h3>
+
+        <br />
+        <button id="random">Random Background</button>
+        <p id="p-random"></p>
+      </div>
+    </div>
+    <script type="text/javascript" src="./js/script.js"></script>
+  </body>
 </html>

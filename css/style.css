@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #383838;
+}
+
+.gradient {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0.5em;
+  font-weight: bolder;
+  margin-bottom: 0.25em;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  margin: 20px 0 8px 0;
+  color: #555;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+h3 {
+  background: #666;
+  color: #ccc;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Roboto Mono", monospace;
+}
+
+button {
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: 0;
+  letter-spacing: 1px;
+  outline: none;
+  background: linear-gradient(to right, #06c, #09f);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button:visited {
+  opacity: 1;
+}
