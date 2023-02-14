@@ -1,30 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Background Generator</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body id="gradient">
-    <div class="gradient">
-      <div class="gradient-container">
-        <h1>Background Generator</h1>
-        <h2>Choose the Colors!</h2>
-        <input type="color" name="color1" class="color1" value="#0066cc" />
-        <input type="color" name="color2" class="color2" value="#008fcf" />
-        <h2>Copy the code</h2>
-        <h3></h3>
 
-        <br />
-        <button id="random">Random Background</button>
-        <p id="p-random"></p>
+<head>
+  <title>Background Generator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="background-generator">
+  <main class="gradient">
+    <div class="gradient__container">
+      <h1 class="gradient__title">Background Generator</h1>
+      <p class="gradient__description">Tool to generate nice backgrounds in CSS with manual or random mode, copy and
+        paste it into your code.
+      </p>
+      <h3 class="gradient__subtitle">Manual mode</h3>
+      <input type="color" name="color1" class="gradient__input color1" value="#8c1a80" />
+      <input type="color" name="color2" class="gradient__input color2" value="#191dd0" />
+      <h3 class="gradient__subtitle">Random mode</h3>
+      <button id="gradient__btn" class="gradient__btn">Generate</button>
+
+      <div class="gradient__result__container">
+        <h3 class="gradient__result__title">Code</h3>
+        <button id="gradient__result__copy" type="button" class="gradient__result__copy" title="Copy to the clipboard">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAACv0lEQVR4nO2bO2sVQRTHJxgUTJqIj2gQ9BP4LEQREUvF7na3Se6c3+wu3I8gKwG1sFIrBRsD4hcQEizUlCIqIopCSjvFKES0ujLkFsmwedy7K5m9OX843XKY89t5njljjErVj4ZE5KqIPBaRdyKyEKl9AeaBaefchKlCSZLsF5HnQKdOJiK/rbVSKvgsy0aB91sdTBkrBQG4vdUBVNET0jQ93HPw7XZ7F/ArcLgoIjeIV21gtgDC9Z4BiMjZAqIXTQ0EzAUAXvbsxFp7JQj+h18NTA3U7Qkr2/65ZydZlo0HQ+CRqYm6w2FlD1joy5G19pSI3AeuNZvNEbPdANRVfQPIsmzcWnvc//nI7Gie58P/BUCe58NAAnza6jV7A/suInf9zrQyAM1mcyRcMmpgX5MkOVEJABF5EkFAfUGYnJzcVwqAiFyIIJAydqcUAOBh8NEf51zLT4Rpmo7FYq1Wa4+19jzwMWjvt7Umxs0CeL1ZojGoC2FVL3DOHSkzBBaCj5yJWL4nFAyDk5UBADARyw+HEIDfIxR9qwCWpT0AHQLoHIBOgugqILoMiu4DTCjRjZDoThDdCqNnAfQwhJ4G0eMwmg9AEyJoRshELE2JpZoTHNOkKJoV7mhaHL0X6OjFCHoz1NngauxWcDP0ZrukxIaASyLyMwAwM9AAsiwb9aX8vphzjWKKywMNAMjXqSR5VuhQBghAt5izKPi3wN6BBwCcDsp6F4Gb61a3ygAB8Gq1Wgd8gbe19kyj0di5oUMZMAA9S5YfGK102DYRCzhYUCR1rIzD+cDhrIlY/u1PCGAzZbNrCpgumDXnuo8NopGvXgPuAX+Dtn4oRXRqauoQsLTO+hm1+aLOUgC8upA7dTMRedpoNHaYCsfWUo2CnwF2myrlnJvwT8uAF351iOAJ7CoDXgEPnHPnKg1cZbaf/gFBl09RaQe+hQAAAABJRU5ErkJggg==" />
+        </button>
+        <code id="resultCode" class="gradient__result"></code>
       </div>
     </div>
-    <script type="text/javascript" src="./js/script.js"></script>
-  </body>
+  </main>
+  <footer class="sign">
+    <h3 class="sign__name">gaskons</h3>
+    <ul class="sign__list">
+      <li class="sign__list__li">
+        <a href="https://github.com/gaskons/bg-gradient" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="48"
+            height="48" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
+            </path>
+          </svg>
+        </a>
+      </li>
+      <li class="sign__list__li">
+        <a href="https://www.linkedin.com/in/gastonkons" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="52"
+            height="52" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+            <path d="M8 11l0 5"></path>
+            <path d="M8 8l0 .01"></path>
+            <path d="M12 16l0 -5"></path>
+            <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </footer>
+  <script type="text/javascript" src="./js/script.js"></script>
+</body>
+
 </html>
