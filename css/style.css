@@ -1,75 +1,281 @@
+/* Normalize CSS */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  color: #383838;
+/* Variables CSS */
+
+:root {
+  --font-family: 'Rubik', sans-serif;
+  --font-bold: 600;
 }
+
+/* Global CSS */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: #383838;
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to right, #191dd0, #8c1a80);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Gradient CSS */
 
 .gradient {
   width: 100%;
-  height: 100%;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.gradient-container {
+.gradient__container {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 30px;
-  padding: 20px 30px;
+  padding: 1.5rem;
+  margin: 24px 8px;
   width: 100%;
   max-width: 600px;
+  height: fit-content;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+.gradient__title {
   font-size: 2.5rem;
-  margin: 0.5em;
-  font-weight: bolder;
+  font-weight: var(--font-bold);
   margin-bottom: 0.25em;
 }
 
-h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
-  margin: 20px 0 8px 0;
-  color: #555;
-  padding: 5px 10px;
-  font-weight: 600;
-}
-
-h3 {
-  background: #666;
-  color: #ccc;
-  padding: 10px 20px;
-  font-weight: 500;
+.gradient__subtitle {
+  font-weight: var(--font-bold);
+  margin: 1rem 0 0.3rem 0;
   font-size: 1rem;
-  font-family: "Roboto Mono", monospace;
+  color: #555;
 }
 
-button {
-  padding: 8px 15px;
-  border-radius: 10px;
-  border: 0;
-  letter-spacing: 1px;
-  outline: none;
-  background: linear-gradient(to right, #06c, #09f);
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 600;
+.gradient__description {
+  color: #555;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  margin: 1rem 0;
+}
+
+.gradient__input {
+  height: 30px;
+  width: 60px;
   cursor: pointer;
+  margin-right: 6px;
 }
 
-button:hover {
+.gradient__result__container {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gradient__result {
+  background: #666;
+  display: block;
+  color: #ccc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: monospace;
+  position: relative;
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+}
+
+.gradient__result-animate::before {
+  content: '';
+  position: absolute;
+  height: 80%;
+  width: 0px;
+  background: #666;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%) skewX(-30deg);
+  animation: toRight 1s linear;
+  opacity: 0;
+}
+
+.gradient__result__title {
+  font-weight: var(--font-bold);
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.gradient__result__copy {
+  outline: none;
+  border: none;
+  background: transparent;
+  margin-right: 8px;
+  cursor: pointer;
+  position: relative;
   opacity: 0.7;
 }
 
-button:visited {
+.gradient__result__copy:hover {
   opacity: 1;
+}
+
+.gradient__result__copy img {
+  height: auto;
+  width: 20px;
+}
+
+.gradient__btn {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 0;
+  letter-spacing: 1px;
+  outline: none;
+  background: linear-gradient(to right, #191dd0, #8c1a80);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+  cursor: pointer;
+}
+
+.gradient__btn:hover {
+  opacity: 0.7;
+}
+
+.gradient__btn:visited {
+  opacity: 1;
+}
+
+.gradient__result__notification {
+  pointer-events: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: var(--font-family);
+  right: -10px;
+  top: -20px;
+  transition: all ease 300ms;
+  animation: toUp 2s linear;
+  opacity: 0;
+}
+
+/* Sign */
+
+.sign {
+  color: #fff;
+  font-family: var(--font-family);
+  text-align: center;
+  margin: 24px 8px;
+  opacity: 0.5;
+  transition: opacity ease 300ms;
+}
+
+.sign:hover {
+  opacity: 1;
+}
+
+.sign__name {
+  font-size: 2rem;
+  font-weight: var(--font-bold);
+  margin: 8px 0;
+}
+
+.sign__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sign__list li {
+  position: relative;
+}
+
+.sign__list li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.sign__list li a:hover {
+  opacity: 0.8;
+}
+
+.sign__list li:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 3px;
+  top: 50%;
+  right: -16%;
+  transform: translateY(-50%);
+  background: #fff;
+  border-radius: 4px;
+}
+
+/* Animations */
+
+@keyframes toUp {
+  0% {
+    opacity: 0;
+    top: 0px;
+  }
+
+  20% {
+    opacity: 1;
+    top: -20px;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+
+@keyframes toRight {
+  0% {
+    width: 0px;
+    opacity: 1;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Media queries */
+@media screen and (min-width: 1024px) {
+  .gradient__container {
+    padding: 2rem;
+  }
+
+  .gradient__result {
+    margin-top: 0.5rem;
+    padding: 1rem 1.6rem;
+  }
 }
